@@ -1,17 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_final/menu_lateral.dart';
-import 'package:proyecto_final/models/user_data_model.dart';
+import 'package:proyecto_final/navigation_tools/menu_lateral.dart';
 
 class Screen1 extends StatelessWidget {
   const Screen1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-  return MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
+  return Scaffold(
       appBar: AppBar(
-        title: const Text('Screen 1'),
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(
+                Icons.menu_outlined,
+                color: Colors.black,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0.0,
+        actions: [
+          IconButton(
+              color: Colors.black,
+              icon: const Icon(Icons.search),
+              onPressed: () {
+                
+              }),
+        ],
       ),
       body: Center(
         child: Column(
@@ -20,13 +37,12 @@ class Screen1 extends StatelessWidget {
           ],
         ),
       ),
-
-      drawer: MenuL(),
-
-
-
-    ),
-  );
+  
+      drawer: const MenuL(),
+  
+  
+  
+    );
   } 
 
 }

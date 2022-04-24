@@ -1,9 +1,10 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/api/api_service_resumen.dart';
+import 'package:proyecto_final/screens/home.dart';
 import 'dart:convert';
 
 import 'package:proyecto_final/models/user_data_model.dart';
-import 'package:proyecto_final/principal_screen.dart';
 
 class ApiServiceLogin{
 
@@ -32,11 +33,13 @@ class ApiServiceLogin{
         userData.apellido = respuesta['data']['apellido'];
         userData.token = respuesta['data']['token'];
 
-        print(userData.nombre + userData.token);
+        // print(userData.nombre + userData.token);
+        ApiServiceResumen resumen = ApiServiceResumen();
+        resumen.resumen();
 
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const PrincipalScreen())
+          MaterialPageRoute(builder: (context) => const Home())
         );
       }
       else if (respuesta['success'] == false){
