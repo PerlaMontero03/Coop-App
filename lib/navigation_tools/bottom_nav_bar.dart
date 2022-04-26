@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_final/screens/resumen.dart';
+import 'package:proyecto_final/screens/bienvenida.dart';
 import 'package:proyecto_final/screens/contactos.dart';
+import 'package:proyecto_final/screens/resumen2.dart';
 import 'package:proyecto_final/screens/whatsapp.dart';
 
 class BotttomNavBar extends StatefulWidget {
@@ -11,12 +12,15 @@ class BotttomNavBar extends StatefulWidget {
 }
 
 class _BotttomNavBarState extends State<BotttomNavBar> {
+
+  
   
   int myindex = 0;
-  List <Widget> widgetList = const[
-    Resumen(),
-    Contactos(),
-    WhatsApp(),
+  List <Widget> widgetList = [
+    const Bienvenida(),
+    const Resumen2(),
+    const Contactos(),
+    const WhatsApp(),
   ];
   
   @override
@@ -41,6 +45,12 @@ class _BotttomNavBarState extends State<BotttomNavBar> {
               icon: Icon(Icons.home_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               label: 'Inicio', 
               tooltip: 'Inicio',
+            ),
+
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_outlined, color: Color.fromARGB(255, 43, 134, 46),),
+              label: 'Resumen',
+              tooltip: 'Resumen',
             ),
       
             BottomNavigationBarItem(

@@ -95,7 +95,7 @@ class _ListaSolicitudesState extends State<ListaSolicitudes> {
                         context, 
                          MaterialPageRoute(
                           builder: (context) => DetallesSolicitudes(
-                            listaSolicitudes.solicitudes[index]["nombre"].toString(),
+                            listaSolicitudes.solicitudes[index]["nombre"],
                             listaSolicitudes.solicitudes[index]["datos"],
                           )
                         ));

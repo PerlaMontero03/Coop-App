@@ -1,5 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/api/api_service_descuentos.dart';
+import 'package:proyecto_final/api/api_service_noticias.dart';
 import 'package:proyecto_final/api/api_service_resumen.dart';
 import 'package:proyecto_final/api/api_service_solicitudes.dart';
 import 'package:proyecto_final/screens/home.dart';
@@ -40,6 +42,12 @@ class ApiServiceLogin{
 
         ApiServiceSolicitudes solicitudes = ApiServiceSolicitudes();
         solicitudes.lista_solicitudes();
+
+        ApiServiceNoticias apinoticias = ApiServiceNoticias();
+        apinoticias.noticias();
+
+        ApiServiceDescuentos descuentos = ApiServiceDescuentos();
+        descuentos.descuentos();
 
         Navigator.push(
           context,

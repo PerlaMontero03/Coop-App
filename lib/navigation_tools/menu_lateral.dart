@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/cuentas.dart';
+import 'package:proyecto_final/screens/descuentos.dart';
 import 'package:proyecto_final/screens/home.dart';
 import 'package:proyecto_final/models/user_data_model.dart';
+import 'package:proyecto_final/screens/lista_noticias.dart';
 import 'package:proyecto_final/screens/login.dart';
 import 'package:proyecto_final/screens/lista_solicitudes.dart';
 import 'package:proyecto_final/screens/prestamos.dart';
@@ -139,7 +141,7 @@ class _MenuLState extends State<MenuL> {
               onTap: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const Screen4()),
+                  MaterialPageRoute(builder: (context) => const Descuentos()),
                 );
               },
             ),
@@ -148,7 +150,12 @@ class _MenuLState extends State<MenuL> {
               title: const Text('Noticias', style: TextStyle(fontSize: 18)),
               leading: const Icon(Icons.newspaper_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               onTap: () {
-                Navigator.pop(context);
+                
+                Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ListaNoticias()),
+                    );
+
               },
             ),
 

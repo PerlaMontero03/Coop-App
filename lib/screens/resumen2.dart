@@ -3,31 +3,13 @@ import 'package:proyecto_final/models/resumen_model.dart';
 import 'package:proyecto_final/models/user_data_model.dart';
 import 'package:proyecto_final/navigation_tools/menu_lateral.dart';
 
-class Screen4 extends StatefulWidget {
-  const Screen4({Key? key}) : super(key: key);
-
-  @override
-  State<Screen4> createState() => _Screen4State();
-
-}
-
-class _Screen4State extends State<Screen4> {
-
-  bool loading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    setState(() {
-      loading = false;
-    });
-  }
+class Resumen2 extends StatelessWidget {
+  const Resumen2({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     UserData user = UserData();
-    ResumenModel resumen = ResumenModel();
+    ResumenModel resumen = ResumenModel(); 
 
     return SafeArea(
       child: Scaffold(
@@ -176,14 +158,16 @@ class _Screen4State extends State<Screen4> {
             // ),
           ];
         },
-        body: loading == true ? Center(child: Container(
-          width: 30,
-          height: 30,
-          child: const CircularProgressIndicator(
-            color: Color.fromARGB(255, 43, 134, 46),
-          ),
-        ),)
-        : ListView(
+        body: 
+        // loading == true ? Center(child: Container(
+        //   width: 30,
+        //   height: 30,
+        //   child: const CircularProgressIndicator(
+        //     color: Color.fromARGB(255, 43, 134, 46),
+        //   ),
+        // ),)
+        // :
+         ListView(
         padding: const EdgeInsets.all(40),
         children: [
           const SizedBox(height: 30),
@@ -426,4 +410,5 @@ class _Screen4State extends State<Screen4> {
       ),
     );
   }
+  
 }

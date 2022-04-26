@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class DetallesSolicitudes extends StatelessWidget {
@@ -55,20 +53,20 @@ class DetallesSolicitudes extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(detalles2[index][0].toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 23,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
 
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
 
                       Text(detalles2[index][1].toString(), 
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 43, 134, 46)
+                          color: const Color.fromARGB(255, 43, 134, 46)
                         ),
                       )
                     ],
