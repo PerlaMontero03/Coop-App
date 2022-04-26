@@ -12,7 +12,7 @@ class Bienvenida extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 204, 247, 187),
+        backgroundColor: Colors.white,
         body: DefaultTabController(
       length: 2,
       child: NestedScrollView(
@@ -68,33 +68,35 @@ class Bienvenida extends StatelessWidget {
         },
         body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(50),
+          padding: const EdgeInsets.all(20),
           child: Card(
             elevation: 4.0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)
                 ),
             child: Padding(
-              padding: const EdgeInsets.all(50),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('Hola ', 
-                        style: TextStyle(
-                          color: Colors.blue, 
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold
-                        ), 
-                      ),
-                      Text(user.nombre, 
-                        style: const TextStyle(
-                          color:Color.fromARGB(255, 43, 134, 46),
-                          fontSize: 50,
-                          fontWeight: FontWeight.bold
+              padding: const EdgeInsets.all(30),
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Hola ', 
+                          style: TextStyle(
+                            color: Colors.blue, 
+                            fontSize: 50,
+                            fontWeight: FontWeight.bold
+                          ), 
                         ),
-                      ),
-                    ],
-                  ),
+                        Text(user.nombre, 
+                          style: const TextStyle(
+                            color:Color.fromARGB(255, 43, 134, 46),
+                            fontSize: 50,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ],
+                    ),
+              ),
             ),
           ),
         ),

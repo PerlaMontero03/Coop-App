@@ -18,6 +18,7 @@ class _ContactosState extends State<Contactos> {
   final double lat = 18.475253950255446;
   final double lng = -69.90295443068801;
 
+  //Función para hacer llamadas
   Future<void> _makePhoneCall(String phoneNumber) async {
     final Uri launchUri = Uri(
       scheme: 'tel',
@@ -26,6 +27,7 @@ class _ContactosState extends State<Contactos> {
     await launchUrl(launchUri);
   }
 
+  //Función para abrir en el navegador la página web
   Future<void> _launchInBrowser(Uri url) async {
     if (!await launchUrl(
       url,
@@ -35,10 +37,13 @@ class _ContactosState extends State<Contactos> {
     }
   }
 
+  //Función para abrir la app de email y enviar email a la institución
   _launchEmail()async{
     launch("mailto:info@coopdgii.com");
   }
 
+  //Función para desplegar un bottom sheet para seleccionar una app de mapas
+  // y abrir la app en la ubicación de la institución
   openMapsSheet(context) async {
     try {
       final coords = Coords(lat, lng);
@@ -82,6 +87,7 @@ class _ContactosState extends State<Contactos> {
   @override
   Widget build(BuildContext context) {
 
+    //Variable que guarda la dirección de la página
     final Uri toLaunch =
       Uri(scheme: 'https', host:'www.coopdgii.com');
 
@@ -129,14 +135,6 @@ class _ContactosState extends State<Contactos> {
                 ),
               ),
             ),
-
-              // const Text('Contactos', 
-              //   style: TextStyle(
-              //     fontSize: 35,
-              //     fontWeight: FontWeight.bold,
-              //     color:  Color.fromARGB(255, 43, 134, 46),
-              //   ),
-              // ),
 
               const SizedBox(height: 10),
 

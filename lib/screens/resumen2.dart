@@ -22,25 +22,6 @@ class Resumen2 extends StatelessWidget {
             SliverAppBar(
               backgroundColor: Colors.white,
               centerTitle: true,
-              // title: Row(
-              //   children: [
-              //     const Text('Hola ', 
-              //       style: TextStyle(
-              //         color: Colors.blue, 
-              //         fontSize: 20,
-              //         fontWeight: FontWeight.bold
-              //       ), 
-              //     ),
-              //     Text(user.nombre, 
-              //       style: const TextStyle(
-              //         color:Color.fromARGB(255, 43, 134, 46),
-              //         fontSize: 20,
-              //         fontWeight: FontWeight.bold
-              //       ),
-              //     ),
-              //   ],
-              // ),
-              
               leading: Builder(
                 builder: (BuildContext context) {
                   return IconButton(
@@ -67,23 +48,7 @@ class Resumen2 extends StatelessWidget {
               floating: true,
               pinned: true,
               snap: true,
-              flexibleSpace: 
-              
-              
-              // FlexibleSpaceBar(
-              //   title: const Text('Prueba'),
-              //   centerTitle: false,
-              //   background: Container(
-              //     decoration: const BoxDecoration(
-              //       image: DecorationImage(
-              //         image: AssetImage('assets/foto2.png'),
-              //         fit: BoxFit.cover,
-              //       )
-              //     ),
-              //   ),
-              // ),
-
-              FlexibleSpaceBar(
+              flexibleSpace: FlexibleSpaceBar(
                 title: ListTile(
                   title: Row(
                 children: [
@@ -106,25 +71,7 @@ class Resumen2 extends StatelessWidget {
               
               subtitle: Text('Última conexión: '+ resumen.ultimaConexion),
                 ),
-                  
-                // Row(
-                // children: [
-                // const Text('Hola ', 
-                //   style: TextStyle(
-                //     color: Colors.blue, 
-                //     fontSize: 20,
-                //     fontWeight: FontWeight.bold
-                //   ), 
-                // ),
-                // Text(user.nombre, 
-                //   style: const TextStyle(
-                //     color:Color.fromARGB(255, 43, 134, 46),
-                //     fontSize: 20,
-                //     fontWeight: FontWeight.bold
-                //   ),
-                // ),
-                //     ],
-                //     ),
+
                 background: Stack(
                   children: <Widget>[
                     Positioned.fill(
@@ -136,38 +83,10 @@ class Resumen2 extends StatelessWidget {
                 ),
               ),
             ),
-            // SliverPadding(
-            //   padding: new EdgeInsets.all(16.0),
-            //   sliver: new SliverList(
-            //     delegate: new SliverChildListDelegate([
-            //       TabBar(
-            //         physics: ScrollPhysics(
-
-            //         ) ,
-            //         labelColor: Colors.black87,
-            //         unselectedLabelColor: Colors.grey,
-            //         tabs: [
-            //           new Tab(icon: new Icon(Icons.info), text: "Tab 1"),
-            //           new Tab(
-            //               icon: new Icon(Icons.lightbulb_outline),
-            //               text: "Tab 2"),
-            //         ],
-            //       ),
-            //     ]),
-            //   ),
-            // ),
           ];
         },
-        body: 
-        // loading == true ? Center(child: Container(
-        //   width: 30,
-        //   height: 30,
-        //   child: const CircularProgressIndicator(
-        //     color: Color.fromARGB(255, 43, 134, 46),
-        //   ),
-        // ),)
-        // :
-         ListView(
+
+        body: ListView(
         padding: const EdgeInsets.all(40),
         children: [
           const SizedBox(height: 30),
@@ -347,65 +266,6 @@ class Resumen2 extends StatelessWidget {
       ),
       ),
     ),
-        
-
-            
-        // body: CustomScrollView(
-        //   slivers: [
-        //     SliverAppBar(
-        //       leading: Builder(
-        //         builder: (BuildContext context) {
-        //           return IconButton(
-        //             icon: const Icon(
-        //               Icons.menu_outlined,
-        //               color: Color.fromARGB(255, 43, 134, 46),
-        //               size: 40
-        //             ),
-        //           onPressed: () => Scaffold.of(context).openDrawer(),
-        //         );
-        //       },
-        //     ),
-
-        //     backgroundColor: Colors.white,
-        //     elevation: 0.0,
-        //     actions: [
-        //       IconButton(
-        //         color: const Color.fromARGB(255, 43, 134, 46),
-        //         icon: const Icon(Icons.notifications_outlined,
-        //           size: 35,
-        //         ),
-        //         onPressed: () {}),
-        //       ],
-        //       pinned: true,
-        //       snap: true,
-        //       floating: true,
-        //       expandedHeight: 380.0,
-        //       flexibleSpace: FlexibleSpaceBar(
-        //         title: const Text('Prueba'),
-        //         centerTitle: false,
-        //         background: Container(
-        //           decoration: const BoxDecoration(
-        //             image: DecorationImage(
-        //               image: AssetImage('assets/foto2.png'),
-        //               fit: BoxFit.cover,
-        //             )
-        //           ),
-        //         ),
-        //       ),
-        //     ),
-      
-        //     SliverList(
-        //       delegate: SliverChildBuilderDelegate(
-        //         (context, index) {
-        //           return const ListTile(
-        //             title: Text('hgvhv'),
-        //           );
-        //         },
-        //         childCount: 20, 
-        //       )
-        //     ),
-        //   ],
-        // )
         drawer: const MenuL(),
       ),
     );

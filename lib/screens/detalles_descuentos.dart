@@ -8,6 +8,7 @@ class DetallesDescuentos extends StatelessWidget {
 
   DetallesDescuentos(this.mes,this.detalles);
 
+  //Función para obtener la información en el arreglo anidado
   void verDetalles(){
     for (int i = 0; i < detalles.length; i++)
     {
@@ -39,36 +40,6 @@ class DetallesDescuentos extends StatelessWidget {
               ),
             ),
           ),
-
-          // Card(
-          //   child: Column(
-          //     children: [
-          //       Row(
-          //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 Expanded(
-          //                   child: Text('Año:',
-          //                     style: const TextStyle(
-          //                       fontSize: 23,
-          //                       fontWeight: FontWeight.bold,
-          //                     ),
-          //                   ),
-          //                 ),
-                  
-          //                 const SizedBox(width: 20),
-                  
-          //                 Text(detalles2['ano'].toString(), 
-          //                   style: const TextStyle(
-          //                     fontSize: 23,
-          //                     fontWeight: FontWeight.bold,
-          //                     color: const Color.fromARGB(255, 43, 134, 46)
-          //                   ),
-          //                 )
-          //               ],
-          //             ),
-          //     ],
-          //   ),
-          // )
         
           ListView.builder(
             padding: const EdgeInsets.only(top: 30),

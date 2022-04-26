@@ -27,21 +27,6 @@ class ApiServiceResumen{
       // print(resumen.cuentas);
       // print(resumen.prestamos);
     }
-      // else if (respuesta['success'] == false){
-      //   showDialog<String>(
-      //     context: context,
-      //     builder: (BuildContext context) => AlertDialog(
-      //     title: const Text('Error al Ingresar'),
-      //     content: Text(respuesta['mensaje']),
-      //     actions: <Widget>[
-      //       TextButton(
-      //         onPressed: () => Navigator.pop(context, 'OK'),
-      //         child: const Text('OK'),
-      //       ),
-      //     ],
-      //   ),
-      //   );
-      // }
   }
   
 }

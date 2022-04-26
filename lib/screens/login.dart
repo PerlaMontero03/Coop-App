@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/api/api_service_login.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Login extends StatefulWidget {
   const Login ({ Key? key }) : super(key: key);
@@ -11,6 +12,25 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController cedula = TextEditingController();
   TextEditingController contrasena = TextEditingController();
+
+  //Función para abrir un chat en WhatsApp con la institución
+  void _launchWhatsApp (String number, message) async {
+    String url = "whatsapp://send?phone=$number&text=$message";
+
+    await canLaunch(url) ? launch(url) : showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Error al Enviar Mensaje'),
+        content: const Text('No es posible abrir Whatsapp. Intente descargar la aplicación en su tienda de aplicaciones.'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'OK'),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +122,9 @@ class _LoginState extends State<Login> {
                             '¿Tiene problemas para Iniciar Sesión?',
                             style: TextStyle(fontSize: 17),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _launchWhatsApp('8494510798','Hola');
+                          },
                         )
                       ),
                   
@@ -135,11 +157,3 @@ class _LoginState extends State<Login> {
     }
   }
 }
-
-// Container(
-//         decoration: const BoxDecoration(
-//           image: DecorationImage(
-//             image: AssetImage('assets/fondoLogin.png'), 
-//             fit: BoxFit.cover
-//           )
-//         ),

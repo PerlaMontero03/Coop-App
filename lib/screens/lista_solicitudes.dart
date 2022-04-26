@@ -24,7 +24,8 @@ class _ListaSolicitudesState extends State<ListaSolicitudes> {
             return IconButton(
               icon: const Icon(
                 Icons.menu_outlined,
-                color: Colors.black,
+                color: Color.fromARGB(255, 43, 134, 46),
+                size: 40
               ),
               onPressed: () => Scaffold.of(context).openDrawer(),
             );
@@ -32,14 +33,6 @@ class _ListaSolicitudesState extends State<ListaSolicitudes> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        actions: [
-          IconButton(
-              color: Colors.black,
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                
-              }),
-        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(35),
@@ -111,22 +104,7 @@ class _ListaSolicitudesState extends State<ListaSolicitudes> {
       ),
   
       drawer: const MenuL(),
-  
-  
-  
+
     );
   } 
 }
-
-// Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Screen1'),
-//       ),
-//       body: Center(
-//         child: Column(
-//           children: const [
-//             Text('Screen 1')
-//           ],
-//         ),
-//       ),
-//     )

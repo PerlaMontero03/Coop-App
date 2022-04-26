@@ -66,42 +66,6 @@ class DetallesNoticia extends StatelessWidget {
               ),
             ),
           )
-        
-          // ListView.builder(
-          //   padding: const EdgeInsets.only(top: 30),
-          //   shrinkWrap: true,
-          //   itemCount: detalles.length,
-          //   itemBuilder: (BuildContext context, int index){
-          //     return Card(
-          //       child: Padding(
-          //         padding: const EdgeInsets.all(20),
-          //         child: Row(
-          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //           children: [
-          //             Expanded(
-          //               child: Text(detalles[index]['title'],
-          //                 style: TextStyle(
-          //                   fontSize: 23,
-          //                   fontWeight: FontWeight.bold,
-          //                 ),
-          //               ),
-          //             ),
-
-          //             SizedBox(width: 20),
-
-          //             Text(detalles[index]['content'],
-          //               style: TextStyle(
-          //                 fontSize: 23,
-          //                 fontWeight: FontWeight.bold,
-          //                 color: Color.fromARGB(255, 43, 134, 46)
-          //               ),
-          //             )
-          //           ],
-          //         ),
-          //       ),
-          //     );
-          //   }
-          // )
         ],
       )
     );

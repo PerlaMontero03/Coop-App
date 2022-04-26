@@ -320,11 +320,6 @@ class Prestamos extends StatelessWidget {
       ),
   
       drawer: const MenuL(),
-  
-  
-  
     );
-
-
   }
 }

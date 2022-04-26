@@ -26,10 +26,6 @@ class ApiServiceLogin{
       Map<String, dynamic> respuesta = json.decode(response.body);
 
       if(respuesta['success'] == true){
-        // UserData(
-        //   nombre: respuesta['data']['nombre'], 
-        //   apellido: respuesta['data']['apellido'], 
-        //   token: respuesta['data']['token']);
 
         UserData userData = UserData();
         userData.nombre = respuesta['data']['nombre'];

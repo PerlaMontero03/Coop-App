@@ -8,6 +8,7 @@ class DetallesSolicitudes extends StatelessWidget {
 
   DetallesSolicitudes(this.nombre_solicitud,this.detalles);
 
+  //Función para obtener la información en el arreglo anidado
   void verDetalles(){
     for (int i = 0; i < detalles.length; i++)
     {
@@ -66,7 +67,7 @@ class DetallesSolicitudes extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.bold,
-                          color: const Color.fromARGB(255, 43, 134, 46)
+                          color:  Color.fromARGB(255, 43, 134, 46)
                         ),
                       )
                     ],

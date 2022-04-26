@@ -11,6 +11,7 @@ class WhatsApp extends StatefulWidget {
 
 class _WhatsAppState extends State<WhatsApp> {
 
+  //Función para abrir un chat en WhatsApp con la institución
   void _launchWhatsApp (String number, message) async {
     String url = "whatsapp://send?phone=$number&text=$message";
 
@@ -77,7 +78,7 @@ class _WhatsAppState extends State<WhatsApp> {
 
               const SizedBox(height: 20),
 
-              const Text('Para su comodidad, estamos disponibles también en Whatsapp. ',
+              const Text('Para su comodidad, estamos disponibles también en Whatsapp. Si presenta algún problema, por favor escribirnos.',
               style: TextStyle(
                 fontSize: 25,
                 fontStyle: FontStyle.italic,
@@ -110,8 +111,6 @@ class _WhatsAppState extends State<WhatsApp> {
               ),
                 ],
               )
-
-              
             ],
           ),
        ),

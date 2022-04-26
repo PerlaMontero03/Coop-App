@@ -221,9 +221,6 @@ class _ResumenState extends State<Resumen> {
       ),
 
       drawer: const MenuL(),
-  
-  
-  
     );
   } 
 }

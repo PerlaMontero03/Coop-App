@@ -7,7 +7,7 @@ import 'package:proyecto_final/screens/lista_noticias.dart';
 import 'package:proyecto_final/screens/login.dart';
 import 'package:proyecto_final/screens/lista_solicitudes.dart';
 import 'package:proyecto_final/screens/prestamos.dart';
-import 'package:proyecto_final/screens/screen4.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MenuL extends StatefulWidget {
   const MenuL({Key? key}) : super(key: key);
@@ -19,6 +19,26 @@ class MenuL extends StatefulWidget {
 class _MenuLState extends State<MenuL> {
 
   UserData userData = UserData();
+
+  //Función para abrir un chat en WhatsApp con la institución
+  //Usada para la sección de ayuda y sugerencias
+  void _launchWhatsApp (String number, message) async {
+    String url = "whatsapp://send?phone=$number&text=$message";
+
+    await canLaunch(url) ? launch(url) : showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+        title: const Text('Error al Enviar Mensaje'),
+        content: const Text('No es posible abrir Whatsapp. Intente descargar la aplicación en su tienda de aplicaciones.'),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.pop(context, 'OK'),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,21 +137,21 @@ class _MenuLState extends State<MenuL> {
                   },
                 ),
 
-                ListTile(
-                  title: const Text('Solicitud de Préstamos', style: TextStyle(fontSize: 18)),
-                  leading: const Icon(Icons.feed_outlined, color: Color.fromARGB(255, 43, 134, 46),),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                // ListTile(
+                //   title: const Text('Solicitud de Préstamos', style: TextStyle(fontSize: 18)),
+                //   leading: const Icon(Icons.feed_outlined, color: Color.fromARGB(255, 43, 134, 46),),
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //   },
+                // ),
 
-                ListTile(
-                  title: const Text('Solicitud de Cuentas', style: TextStyle(fontSize: 18)),
-                  leading: const Icon(Icons.feed_outlined, color: Color.fromARGB(255, 43, 134, 46),),
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                // ListTile(
+                //   title: const Text('Solicitud de Cuentas', style: TextStyle(fontSize: 18)),
+                //   leading: const Icon(Icons.feed_outlined, color: Color.fromARGB(255, 43, 134, 46),),
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //   },
+                // ),
               ],
             ),
 
@@ -163,7 +183,7 @@ class _MenuLState extends State<MenuL> {
               title: const Text('Sugerencias', style: TextStyle(fontSize: 18)),
               leading: const Icon(Icons.topic_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               onTap: () {
-                Navigator.pop(context);
+                _launchWhatsApp('8494510798','Hola');
               },
             ),
 
@@ -171,7 +191,7 @@ class _MenuLState extends State<MenuL> {
               title: const Text('Ayuda', style: TextStyle(fontSize: 18)),
               leading: const Icon(Icons.contact_support_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               onTap: () {
-                Navigator.pop(context);
+                _launchWhatsApp('8494510798','Hola');
               },
             ),
 
@@ -239,7 +259,6 @@ class _MenuLState extends State<MenuL> {
                 ],
               ),
             )
-
           ],
         ),
       );

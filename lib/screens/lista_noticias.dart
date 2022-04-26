@@ -24,7 +24,8 @@ class _ListaNoticias extends State<ListaNoticias> {
             return IconButton(
               icon: const Icon(
                 Icons.menu_outlined,
-                color: Colors.black,
+                color: Color.fromARGB(255, 43, 134, 46),
+                size: 40
               ),
               onPressed: () => Scaffold.of(context).openDrawer(),
             );
@@ -32,14 +33,6 @@ class _ListaNoticias extends State<ListaNoticias> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        actions: [
-          IconButton(
-              color: Colors.black,
-              icon: const Icon(Icons.search),
-              onPressed: () {
-                
-              }),
-        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(35),
@@ -124,8 +117,6 @@ class _ListaNoticias extends State<ListaNoticias> {
       ),
   
       drawer: const MenuL(),
-  
-  
   
     );
   } 
