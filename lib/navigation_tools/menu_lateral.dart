@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/screens/cuentas.dart';
 import 'package:proyecto_final/screens/home.dart';
 import 'package:proyecto_final/models/user_data_model.dart';
 import 'package:proyecto_final/screens/login.dart';
+import 'package:proyecto_final/screens/lista_solicitudes.dart';
+import 'package:proyecto_final/screens/prestamos.dart';
 import 'package:proyecto_final/screens/screen4.dart';
 
 class MenuL extends StatefulWidget {
@@ -68,7 +71,10 @@ class _MenuLState extends State<MenuL> {
               title: const Text('Cuentas', style: TextStyle(fontSize: 18)),
               leading: const Icon(Icons.savings_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Cuentas()),
+                );
               },
             ),
 
@@ -78,7 +84,7 @@ class _MenuLState extends State<MenuL> {
               onTap: () => {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => const Screen4()),
+                  MaterialPageRoute(builder: (context) => const Prestamos()),
                 )
               },
             ),
@@ -93,11 +99,22 @@ class _MenuLState extends State<MenuL> {
 
             ExpansionTile(
               title: const Text("Solicitudes", style: TextStyle(fontSize: 18)),
-              backgroundColor: Color.fromARGB(255, 221, 221, 221), 
+              backgroundColor: const Color.fromARGB(255, 238, 232, 232), 
               textColor: const Color.fromARGB(255, 43, 134, 46),
               iconColor: const Color.fromARGB(255, 43, 134, 46),
               leading: const Icon(Icons.receipt_long_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               children: <Widget>[
+                ListTile(
+                  title: const Text('Ver Solicitudes', style: TextStyle(fontSize: 18)),
+                  leading: const Icon(Icons.view_list_outlined, color: Color.fromARGB(255, 43, 134, 46),),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const ListaSolicitudes()),
+                    );
+                  },
+                ),
+
                 ListTile(
                   title: const Text('Solicitud de Préstamos', style: TextStyle(fontSize: 18)),
                   leading: const Icon(Icons.feed_outlined, color: Color.fromARGB(255, 43, 134, 46),),
@@ -120,7 +137,10 @@ class _MenuLState extends State<MenuL> {
               title: const Text('Descuentos', style: TextStyle(fontSize: 18)),
               leading: const Icon(Icons.calculate_outlined, color: Color.fromARGB(255, 43, 134, 46),),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Screen4()),
+                );
               },
             ),
 

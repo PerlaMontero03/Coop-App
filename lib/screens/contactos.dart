@@ -87,13 +87,15 @@ class _ContactosState extends State<Contactos> {
 
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
                 icon: const Icon(
                   Icons.menu_outlined,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 43, 134, 46),
+                  size: 40
                 ),
                 onPressed: () => Scaffold.of(context).openDrawer(),
               );
@@ -104,7 +106,7 @@ class _ContactosState extends State<Contactos> {
         ),
 
         body: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.fromLTRB(25, 10, 25, 25),
           child: ListView(
             children: [
               Center(
@@ -115,133 +117,172 @@ class _ContactosState extends State<Contactos> {
                 ) 
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 25),
 
-              const Text('Contactos', 
-                style: TextStyle(
+               const ListTile(
+                leading: Icon(Icons.call_outlined, color: Color.fromARGB(255, 43, 134, 46), size: 40,),
+                title: Text('Contactos', 
+                 style: TextStyle(
+                  color: Color.fromARGB(255, 43, 134, 46),
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
-                  color:  Color.fromARGB(255, 43, 134, 46),
                 ),
               ),
+            ),
 
-              const SizedBox(height: 30),
+              // const Text('Contactos', 
+              //   style: TextStyle(
+              //     fontSize: 35,
+              //     fontWeight: FontWeight.bold,
+              //     color:  Color.fromARGB(255, 43, 134, 46),
+              //   ),
+              // ),
 
-              const Text('Oficina', 
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color:  Color.fromARGB(255, 43, 134, 46),
+              const SizedBox(height: 10),
+
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
                 ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('Oficina', 
+                    style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color:  Color.fromARGB(255, 43, 134, 46),
+                  ),
               ),
 
               const SizedBox(height: 10),
 
               const Text('Teléfono: (809) 287-2700',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
 
-                ),
+                  ),
               ),
 
               const SizedBox(height: 20),
 
               Container(
-                padding: const EdgeInsets.only(right: 320),
-                child: ElevatedButton.icon(
-                  icon: const Icon(
-                    Icons.call,
-                    size: 25,
-                    color: Colors.yellow,
+                  padding: const EdgeInsets.only(right: 250),
+                  child: ElevatedButton.icon(
+                    icon: const Icon(
+                      Icons.call,
+                      size: 25,
+                      color: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      _makePhoneCall('tel:8092872700');
+                    },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(10),
+                      primary: Colors.white,
+                      backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
+                    label: const Text('Llamar', style: TextStyle(fontSize: 20),)
                   ),
-                  onPressed: () {
-                    _makePhoneCall('tel:8092872700');
-                  },
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(10),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
-                  label: const Text('Llamar', style: TextStyle(fontSize: 20),)
-                ),
               ),
 
               const SizedBox(height: 30),
 
               const Text('Correo: info@coopdgii.com',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
 
-                ),
+                  ),
               ),
 
               const SizedBox(height: 20),
 
               Container(
-                padding: const EdgeInsets.only(right: 270),
-                child: ElevatedButton.icon(
-                  icon: const Icon(
-                    Icons.mail,
-                    size: 25,
-                    color: Colors.yellow,
+                  padding: const EdgeInsets.only(right: 200),
+                  child: ElevatedButton.icon(
+                    icon: const Icon(
+                      Icons.mail,
+                      size: 25,
+                      color: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      _launchEmail();
+                    },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(10),
+                      primary: Colors.white,
+                      backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
+                    label: const Text('Enviar correo', style: TextStyle(fontSize: 20),)
                   ),
-                  onPressed: () {
-                    _launchEmail();
-                  },
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(10),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
-                  label: const Text('Enviar correo', style: TextStyle(fontSize: 20),)
+              ),
+                    ],
+                  ),
                 ),
               ),
 
               const SizedBox(height: 30),
 
-              const Text('Localización', 
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color:  Color.fromARGB(255, 43, 134, 46),
+              Card(
+                elevation: 10,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
                 ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      const Text('Localización', 
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color:  Color.fromARGB(255, 43, 134, 46),
+                  ),
               ),
 
               const SizedBox(height: 10),
 
               const Text('Av. Pedro Henríquez Ureña #29 Gazcue, Santo Domingo, República Dominicana',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontStyle: FontStyle.italic,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
 
-                ),
-              ),
-
-              const SizedBox(height: 30),
-
-              Container(
-                padding: const EdgeInsets.only(right: 150),
-                child: ElevatedButton.icon(
-                  icon: const Icon(
-                    Icons.location_on,
-                    size: 25,
-                    color: Colors.yellow,
                   ),
-                  onPressed: () {
-                    openMapsSheet(context);
-                  },
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.all(10),
-                    primary: Colors.white,
-                    backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
-                  label: const Text('Ver ubicación en el mapa', style: TextStyle(fontSize: 20),)
-                ),
               ),
 
               const SizedBox(height: 30),
 
               Container(
-                padding: const EdgeInsets.only(right: 225),
+                  padding: const EdgeInsets.only(right: 160),
+                  child: ElevatedButton.icon(
+                    icon: const Icon(
+                      Icons.location_on,
+                      size: 25,
+                      color: Colors.yellow,
+                    ),
+                    onPressed: () {
+                      openMapsSheet(context);
+                    },
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(10),
+                      primary: Colors.white,
+                      backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
+                    label: const Text('Ver ubicación en el mapa', style: TextStyle(fontSize: 20),)
+                  ),
+              ),
+                    ],
+                  ),
+                ),
+              ),
+              
+
+              const SizedBox(height: 30),
+
+              Container(
+                // padding: const EdgeInsets.only(right: 225),
                 child: ElevatedButton.icon(
                   icon: const Icon(
                     Icons.language,

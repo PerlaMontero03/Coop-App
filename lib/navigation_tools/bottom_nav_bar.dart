@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/screens/resumen.dart';
-import 'package:proyecto_final/screens/screen1.dart';
 import 'package:proyecto_final/screens/contactos.dart';
 import 'package:proyecto_final/screens/whatsapp.dart';
 

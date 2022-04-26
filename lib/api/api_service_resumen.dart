@@ -22,6 +22,7 @@ class ApiServiceResumen{
       ResumenModel resumen = ResumenModel();
       resumen.cuentas = respuesta['data']['cuentas'];
       resumen.prestamos = respuesta['data']['prestamos'];
+      resumen.ultimaConexion = respuesta['data']['ultimo_acceso'];
 
       // print(resumen.cuentas);
       // print(resumen.prestamos);

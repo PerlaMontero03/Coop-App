@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:proyecto_final/api/api_service_resumen.dart';
+import 'package:proyecto_final/api/api_service_solicitudes.dart';
 import 'package:proyecto_final/screens/home.dart';
 import 'dart:convert';
 
@@ -36,6 +37,9 @@ class ApiServiceLogin{
         // print(userData.nombre + userData.token);
         ApiServiceResumen resumen = ApiServiceResumen();
         resumen.resumen();
+
+        ApiServiceSolicitudes solicitudes = ApiServiceSolicitudes();
+        solicitudes.lista_solicitudes();
 
         Navigator.push(
           context,

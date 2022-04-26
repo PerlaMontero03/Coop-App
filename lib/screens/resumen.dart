@@ -18,13 +18,15 @@ class _ResumenState extends State<Resumen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
               icon: const Icon(
                 Icons.menu_outlined,
-                color: Colors.black,
+                color: Color.fromARGB(255, 43, 134, 46),
+                size: 40
               ),
               onPressed: () => Scaffold.of(context).openDrawer(),
             );
@@ -32,12 +34,14 @@ class _ResumenState extends State<Resumen> {
         ),
         backgroundColor: Colors.transparent,
         elevation: 0.0,
-        // actions: [
-        //   IconButton(
-        //       color: Colors.black,
-        //       icon: const Icon(Icons.search),
-        //       onPressed: () {}),
-        // ],
+        actions: [
+          IconButton(
+              color: const Color.fromARGB(255, 43, 134, 46),
+              icon: const Icon(Icons.notifications_outlined,
+                size: 35,
+              ),
+              onPressed: () {}),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(35),
@@ -98,7 +102,7 @@ class _ResumenState extends State<Resumen> {
                                 fontSize: 16,
                               ),
                             ),
-                            Text(resumen.cuentas[index]["balance_disponible"],
+                            Text('DOP | '+resumen.cuentas[index]["balance_disponible"],
                               style: const TextStyle(
                                 fontSize: 23,
                                 fontWeight: FontWeight.bold,
@@ -185,7 +189,7 @@ class _ResumenState extends State<Resumen> {
                                 fontSize: 16,
                               ),
                             ),
-                            Text(resumen.prestamos[index]["balance_prestamo"],
+                            Text('DOP | '+resumen.prestamos[index]["balance_prestamo"],
                               style: const TextStyle(
                                 fontSize: 23,
                                 fontWeight: FontWeight.bold,

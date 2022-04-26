@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_final/navigation_tools/menu_lateral.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class WhatsApp extends StatefulWidget {
@@ -32,13 +33,15 @@ class _WhatsAppState extends State<WhatsApp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
           leading: Builder(
             builder: (BuildContext context) {
               return IconButton(
                 icon: const Icon(
                   Icons.menu_outlined,
-                  color: Colors.black,
+                  color: Color.fromARGB(255, 43, 134, 46),
+                  size: 40
                 ),
                 onPressed: () => Scaffold.of(context).openDrawer(),
               );
@@ -49,7 +52,7 @@ class _WhatsAppState extends State<WhatsApp> {
         ),
 
         body: Padding(
-          padding: const EdgeInsets.all(40),
+          padding: const EdgeInsets.fromLTRB(40, 10, 40, 40),
           child: ListView(
             children: [
               Center(
@@ -60,51 +63,60 @@ class _WhatsAppState extends State<WhatsApp> {
                 ) 
               ),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 60),
 
-              const Text('Contacténos vía WhatsApp', 
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color:  Color.fromARGB(255, 43, 134, 46),
-                ),
-              ),
+              Column(
+                children: [
+                  const Text('Contacténos vía WhatsApp', 
+                    style: TextStyle(
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      color:  Color.fromARGB(255, 43, 134, 46),
+                    ),
+                  ),
 
               const SizedBox(height: 20),
 
               const Text('Para su comodidad, estamos disponibles también en Whatsapp. ',
-                style: TextStyle(
-                  fontSize: 25,
-                  fontStyle: FontStyle.italic,
+              style: TextStyle(
+                fontSize: 25,
+                fontStyle: FontStyle.italic,
 
-                ),
+              ),
               ),
 
               const SizedBox(height: 40),
 
               Center(
-                child: Container(
-                  // padding: const EdgeInsets.only(right: 320),
-                  child: ElevatedButton.icon(
-                    icon: const Icon(
-                      Icons.whatsapp,
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      _launchWhatsApp('8494510798','Hola');
-                    },
-                    style: TextButton.styleFrom(
-                      padding: const EdgeInsets.all(14),
-                      primary: Colors.white,
-                      backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
-                    label: const Text('Escribir al WhatsApp', style: TextStyle(fontSize: 20),)
+              // ignore: avoid_unnecessary_containers
+              child: Container(
+                // padding: const EdgeInsets.only(right: 320),
+                child: ElevatedButton.icon(
+                  icon: const Icon(
+                    Icons.whatsapp,
+                    size: 30,
+                    color: Colors.white,
                   ),
+                  onPressed: () {
+                    _launchWhatsApp('8494510798','Hola');
+                  },
+                  style: TextButton.styleFrom(
+                    padding: const EdgeInsets.all(14),
+                    primary: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 43, 134, 46),),
+                  label: const Text('Escribir al WhatsApp', style: TextStyle(fontSize: 20),)
                 ),
               ),
+              ),
+                ],
+              )
+
+              
             ],
           ),
-       )
+       ),
+
+       drawer: const MenuL(),
       ),
     );
   }  
